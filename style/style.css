@@ -48,6 +48,7 @@
     border-radius: 10px;
     background-color: #f0f0f0;
     box-shadow: inset 1px 0 170px -65px rgba(0,0,0,0.8), inset 2px 0 38px 3px rgba(0,0,0,0.4);
+    position: relative;
 }
 
 
@@ -57,15 +58,37 @@
     margin-top: 20px;
 }
 
+.single-shelf {
+    margin-bottom: 20px;
+
+}
+
 .shelft {
     transform: perspective(2px) rotateX(1deg);
     background: url(./../resources/imgs/metal-white.jpg);
     position: absolute;
-    bottom: 33px;
+    bottom: 36px;
     margin-left: 60px;
     height: 46px;
     z-index: 1;
     width: 78%;
+}
+
+.empty-shelfs {
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: 1;
+}
+
+.shelfs-with-products {
+    width: 100%;
+    position: absolute;
+    top:20px;
+    z-index: 2;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom: 40px;
 }
 
 .code-track {
@@ -85,6 +108,7 @@
     font-family: CalculatorStandard;
     font-size: 22px;
     color:white;
+    margin-bottom: 19px;
 }
 
 .vm-control {
@@ -107,8 +131,6 @@
     padding-left:220px;
 }
 
-
-
 .logo {
     width: 120px;
     height: 50px;
@@ -116,9 +138,6 @@
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(5px 5px 5px #222);
 }
-
-
-
 
 .green-light {
     background-color: green;
@@ -142,10 +161,6 @@
     padding-left: 0px;
     margin-left:0px;
     margin-right: 0px;
-}
-
-.product {
-
 }
 
 .product-image {
@@ -302,7 +317,7 @@
     text-align:center;
     color:#FFF;
     text-decoration:none;
-    font-family:'CalculatorStandard;
+    font-family:CalculatorStandard;
     display: block;
 }
 
@@ -353,3 +368,6 @@
     bottom: 5px;
     right: 15px;
 }
+
+
+

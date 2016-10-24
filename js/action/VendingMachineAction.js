@@ -5,5 +5,13 @@ module.exports = (dispatcher) =>
         },
         purchase: (product) => {
             dispatcher.dispatch('action:purchase', product);
+        },
+
+        enterCode: (code) => {
+            dispatcher.dispatch('action:enterCode', code);
+        },
+
+        resetCode: () => {
+            dispatcher.dispatch('action.resetCode');
         }
     });
