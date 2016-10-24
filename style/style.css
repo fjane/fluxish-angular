@@ -3,23 +3,255 @@
     src: url("./../resources/fonts/digital-7.ttf");
 }
 
-.shelf-cell {
-    border: 1px solid black;
-    height: 205px;
-    border-radius: 10px;
-    padding:5px;
-    text-align: center;
-
-    margin:10px;
+@keyframes blinker {
+    50% { opacity: 0; }
 }
 
-.control-panel {
-    height: 800px;
-    background-color: green;
+@keyframes example1 {
+    0%   {
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+.vending-machine {
+    padding: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.vm-top {
+    background:url("./../resources/imgs/metal-top.jpg");
+    border-left: 150px  solid white;
+    border-right: 150px solid white;
+    border-bottom: 50px solid transparent;
+    opacity: .82
+}
+
+.vm-body {
+    background: url("./../resources/imgs/metal.jpg") ;
+    height: 850px;
+
+}
+
+.vm-window {
+    margin: 40px;
+    margin-right: 0px;
+    border:1px solid black;
+    height: 770px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: inset 1px 0 170px -65px rgba(0,0,0,0.8), inset 2px 0 38px 3px rgba(0,0,0,0.4);
+}
+
+
+.shelf-components {
+    position: relative;
+    height: 130px;
+    margin-top: 20px;
+}
+
+.shelft {
+    transform: perspective(2px) rotateX(1deg);
+    background: url(./../resources/imgs/metal-white.jpg);
+    position: absolute;
+    bottom: 33px;
+    margin-left: 60px;
+    height: 46px;
+    z-index: 1;
+    width: 78%;
+}
+
+.code-track {
+    background: url("./../resources/imgs/track.jpg");
+    border:1px solid black;
+    height: 30px;
+    padding-left: 10px;
+    margin-left:0px;
+    margin-right: 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 .product-code {
     font-family: CalculatorStandard;
+    font-size: 22px;
+    color:white;
+}
+
+.vm-control {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    position: relative;
+    height: 770px;
+}
+
+.control-content {
+    position: absolute;
+    top:0;
+    width: 100%;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    padding-left:220px;
+}
+
+
+
+.logo {
+    width: 120px;
+    height: 50px;
+    margin-left: 120px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+
+
+
+.green-light {
+    background-color: green;
+    border-radius: 1em;
+    height: 20px;
+    width: 20px;
+    animation: blinker 1s linear infinite;
+}
+
+.red-light {
+    background-color: #660000;
+    border-radius: 1em;
+    height: 20px;
+    width: 20px;
+}
+
+.product-line {
+    position: absolute;
+    bottom:18px;
+    z-index: 1;
+    padding-left: 0px;
+    margin-left:0px;
+    margin-right: 0px;
+}
+
+.product {
+
+}
+
+.product-image {
+    height: 100px;
+    width: 70px;
+}
+
+
+
+.controls {
+    border: 1px solid #191919;
+    margin-top:30px;
+    border-radius: 15px;
+    height: 400px;
+    margin-right:60px;
+    padding: 15px;
+
+    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+}
+
+.last-purchase {
+    font-family: CalculatorStandard;
+    font-size: 30px;
+    color:green;
+    font-weight: bold;
+
+    border: 1px solid black;
+    background-color: #003300;
+
+    overflow: hidden;
+    position: relative;
+    height:40px;
+    width: 100%;
+}
+
+.last-purchase span {
+    position: absolute;
+    bottom: 2px;
+    width: 400px;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+
+    animation: example1 5s linear infinite;
+}
+
+.pad {
+    padding: 15px;
+    padding-right:0;
+    text-align: center;
+}
+
+.pad-key {
+    color:white;
+    border: 1px solid #191919;
+    border-radius: 10px;
+    height: 50px;
     font-size: 25px;
-    font-weight: 100;
+    font-family:CalculatorStandard;
+    padding-top:8px;
+
+    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+}
+
+.pad-key:hover {
+    background-color: #3d3b3b;
+    cursor: pointer;
+}
+
+.pad-key-disabled {
+    background-color: transparent;
+    border:0px;
+    box-shadow: none;
+
+}
+
+.pad-key-disabled:hover {
+    background-color: inherit;
+    cursor: inherit;
+}
+
+.ok-button {
+    border: 1px solid #191919;
+    background-color: #006600;
+    height: 98px;
+    width: 100%;
+    border-radius: 10px;
+
+    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+}
+
+.cancel-button {
+    border: 1px solid #191919;
+    background-color: red;
+    height: 98px;
+    margin-top:3px;
+    width: 100%;
+    border-radius: 10px;
+
+    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
 }
