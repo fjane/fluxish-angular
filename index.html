@@ -1,102 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="//rawgit.com/gilbox/angular-simflux-experiment/master/Flux.js"></script>
-    <script src="js/customFlux.js"></script>
-    <script src="dist/bundle.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body ng-app="vmApp" ng-controller="vmCtrl">
-<!--    <div ng-repeat="product in products">
-        <button ng-click="purchaseEvent(product)">{{product.name}}</button>
-    </div>
-    {{tekst}}<br/>
-{{counter}}-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="//rawgit.com/gilbox/angular-simflux-experiment/master/Flux.js"></script>
+        <script src="js/customFlux.js"></script>
+        <script src="dist/bundle.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body ng-app="vmApp" ng-controller="vmCtrl">
 
-<div class="container vending-machine">
-    <div class="vm-top"></div>
-    <div class="vm-body">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="vm-window">
-                    <div class="empty-shelfs">
-                        <div class="shelf-components" ng-repeat="i in [1,2,3,4,5]">
-                            <div class="shelft"></div>
-                            <div class="row code-track text-center" style="z-index:0;"></div>
-                        </div>
-                    </div>
-                    <div class="shelfs-with-products">
-                        <div class="row single-shelf">
-                            <div class="col-lg-2" ng-repeat="product in products">
-                                <img ng-src="./resources/imgs/{{product.imgSrc}}"class="product-image">
-                                <div class="text-center product-code">{{product.code}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 vm-control">
-                <div class="control-content">
-                    <img src="resources/imgs/logo.png"  class="logo">
-
-                    <div class="last-purchase">
-                        <span>You haven't purchased anything!</span>
-                    </div>
-
-                    <div class="controls">
-                        <div class="entered-code-field">
-                            ENTERED: {{code}}
-                        </div>
-                        <div class="pad">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="row">
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('A')">A</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('B')">B</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('C')">C</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('D')">D</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('E')">E</div>
-                                        <div class="col-lg-4 pad-key-disabled"></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('1')">1</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('2')">2</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('3')">3</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('4')">4</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('5')">5</div>
-                                        <div class="col-lg-4 pad-key push_button" ng-click="enterCode('6')">6</div>
-                                    </div>
+        <div class="vending-machine" style="width: 1200px">
+            <div class="vm-top"></div>
+            <div class="vm-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="vm-window">
+                            <div class="empty-shelfs">
+                                <div class="shelf-components" ng-repeat="i in [1,2,3,4,5]">
+                                    <div class="shelft"></div>
+                                    <div class="row code-track text-center" style="z-index:0;"></div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="ok-button push_button">
+                            </div>
+                            <div class="shelfs-with-products">
+                                <div class="row single-shelf">
+                                    <div class="col-lg-2" ng-repeat="product in state.products">
+                                        <product-image src="product.imgSrc" quantity="product.quantity"></product-image>
+                                        <div class="text-center product-code">{{product.code}}</div>
                                     </div>
-                                    <div class="cancel-button push_button" ng-click="resetCode()"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="attention-poster pull-right">
-                        <img src="./resources/imgs/vending-machine-warning.jpg" height="150" width="130">
+                    <div class="col-lg-4 vm-control">
+                        <div class="control-content">
+                            <img src="resources/imgs/logo.png" class="logo">
+
+                            <div class="last-purchase">
+                                <span>{{state.ledMessage}}</span>
+                            </div>
+
+                            <action-pad code="state.code"></action-pad>
+
+                            <div class="attention-poster pull-right">
+                                <img src="./resources/imgs/vending-machine-warning.jpg" height="150" width="130">
+                            </div>
+                            <div class="product-exit">
+                                <span>product exit</span>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="green-light"></div>
+                            <div class="red-light"></div>
+                        </div>
                     </div>
-                    <div class="product-exit">
-                        <span>product exit</span>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <div class="green-light"></div>
-                    <div class="red-light"></div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-</body>
+    </body>
 </html>

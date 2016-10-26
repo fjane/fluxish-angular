@@ -1,0 +1,36 @@
+<div class="controls">
+    <div class="entered-code-field">
+        ENTERED: {{code}}
+    </div>
+    <div class="pad">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('A')">A</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('B')">B</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('C')">C</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('D')">D</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('E')">E</div>
+                    <div class="col-lg-4 pad-key-disabled"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('1')">1</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('2')">2</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('3')">3</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('4')">4</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('5')">5</div>
+                    <div class="col-lg-4 pad-key push_button" ng-click="enterCode('6')">6</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ok-button push_button" ng-click="makePurchase(code)">
+                </div>
+                <div class="cancel-button push_button" ng-click="resetCode()"></div>
+            </div>
+        </div>
+    </div>
+</div>

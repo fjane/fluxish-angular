@@ -1,26 +1,46 @@
-module.exports = (dispatcher, VendingMachineProducts) =>
+import Immutable from "immutable";
+export default (dispatcher, VendingMachineProducts) =>
     dispatcher.registerStore({
-        products: [],
-        boughtProduct: "You haven't boughjt anything!",
+        
+        state: {
+            products: [],
+            ledMessage: "You haven't purchased anything!",
+            code: "__"
+        },
 
-        code: "__",
+        returnProductFromList: function (code) {
+            for(var i=0; i< this.state.products.length; i++) {
+                if(this.state.products[i].code === code) {
+                    return this.state.products[i];
+                }
+            }
+            return null;
+        },
 
         'action:init': function() {
-            this.products = VendingMachineProducts;
-        },
-        'action:purchase': function (payload) {
-            this.boughtProduct = `Congratulation! You have just bought ${payload.name}`;
-            console.log(this.boughtProduct);
+            this.state.products = VendingMachineProducts;
         },
 
+        'action:purchase': function(payload) {
+            const product = this.returnProductFromList(payload.code);
 
-
-        'action:enterCode': function(codeCharacter) {
-            if(this.code === "__") this.code = "_" + codeCharacter;
-            else this.code = this.code[1] + codeCharacter;
-            return this.code;
+            if(!product) {
+                this.state.ledMessage = "Invalid purchase code!";
+            }
+            else {
+                this.state.ledMessage = `You just bought: ${product.name}`;
+            }
+            this.state.code = '__';
         },
+
+        'action:enterCode': function(payload) {
+            const code = this.state.code;
+            this.state.code = (code === "__") ?
+                "_" + payload.character :
+                 code[1] + payload.character;
+        },
+
         'action.resetCode': function() {
-            this.code = "__";
+            this.state.code =  "__";
         }
     });

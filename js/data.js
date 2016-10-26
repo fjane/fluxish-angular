@@ -1,10 +1,10 @@
-module.exports = [
-    {name: "Stobi Flips", code: "A1", quantity: 10, imgSrc: "stobi-flips.png"},
-    {name: "Choco Stobi Flips", code: "A2", quantity: 5, imgSrc: "chocko-stobi-flips.png"},
-    {name: "Lay's Classic", code: "A3", quantity: 7, imgSrc: "lays-classic.png"},
-    {name: "Doritos Salsa Verde", code: "A4", quantity: 2, imgSrc: "doritos-green.png"},
-    {name: "Patos Baharath", code: "A5", quantity: 3, imgSrc: "patos-green.png"},
-    {name: "Smoki Stark", code: "A6", quantity: 9, imgSrc: "stark-smoki.png"},
+export default [
+    {name: "Stobi Flips", code: "A1", quantity: 1, imgSrc: "stobi-flips.png"},
+    {name: "Choco Stobi Flips", code: "A2", quantity: 2, imgSrc: "chocko-stobi-flips.png"},
+    {name: "Lay's Classic", code: "A3", quantity: 3, imgSrc: "lays-classic.png"},
+    {name: "Doritos Salsa Verde", code: "A4", quantity: 4, imgSrc: "doritos-green.png"},
+    {name: "Patos Baharath", code: "A5", quantity: 55, imgSrc: "patos-green.png"},
+    {name: "Smoki Stark", code: "A6", quantity: 6, imgSrc: "stark-smoki.png"},
 
     {name: "Patos Nacho", code: "B1", quantity: 3, imgSrc: "patos-nacho.png"},
     {name: "Doritos Cheese", code: "B2", quantity: 5, imgSrc: "doritos.png"},

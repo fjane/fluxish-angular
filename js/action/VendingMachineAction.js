@@ -3,12 +3,12 @@ module.exports = (dispatcher) =>
         init: () => {
             dispatcher.dispatch('action:init');
         },
-        purchase: (product) => {
-            dispatcher.dispatch('action:purchase', product);
+        purchase: (code) => {
+            dispatcher.dispatch('action:purchase', {code});
         },
 
-        enterCode: (code) => {
-            dispatcher.dispatch('action:enterCode', code);
+        enterCode: (character) => {
+            dispatcher.dispatch('action:enterCode', {character});
         },
 
         resetCode: () => {

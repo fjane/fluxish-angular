@@ -1,17 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
-plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            screw_ie8: true,
-            warnings: false
-        }
-    })
-]
 
 module.exports = {
     entry: {
-        app: ['./js/app.js', './js/controller.js', './js/action/VendingMachineAction.js', './js/store/CounterStore.js', './js/store/ScreenStore.js']
+        app: ['./js/app.js',
+            './js/controller.js',
+            './js/action/VendingMachineAction.js',
+            './js/store/ScreenStore.js',
+            './js/directives/controlPadComponent.js',
+            './js/directives/productImageDirective.js'
+        ]
     },
     output: {
         path: path.join(__dirname, "dist"),
@@ -39,13 +37,5 @@ module.exports = {
                 }
             }
         ]
-    }/*,
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                screw_ie8: true,
-                warnings: false
-            }
-        })
-    ]*/
+    }
 }
