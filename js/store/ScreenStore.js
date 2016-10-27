@@ -3,18 +3,9 @@ export default (dispatcher, VendingMachineProducts) =>
     dispatcher.registerStore({
         
         state: {
-            products: [],
+            products: {},
             ledMessage: "You haven't purchased anything!",
             code: "__"
-        },
-
-        returnProductFromList: function (code) {
-            for(var i=0; i< this.state.products.length; i++) {
-                if(this.state.products[i].code === code) {
-                    return this.state.products[i];
-                }
-            }
-            return null;
         },
 
         'action:init': function() {
@@ -22,13 +13,19 @@ export default (dispatcher, VendingMachineProducts) =>
         },
 
         'action:purchase': function(payload) {
-            const product = this.returnProductFromList(payload.code);
+            const product = this.state.products[payload.code];
 
             if(!product) {
                 this.state.ledMessage = "Invalid purchase code!";
             }
             else {
-                this.state.ledMessage = `You just bought: ${product.name}`;
+                if(product.quantity === 0) {
+                    this.state.ledMessage = `No products! Try something else.`;
+                }
+                else {
+                    --this.state.products[payload.code].quantity;
+                    this.state.ledMessage = `You just bought: ${product.name}.`;
+                }
             }
             this.state.code = '__';
         },

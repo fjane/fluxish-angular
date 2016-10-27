@@ -2,12 +2,11 @@
     font-family: CalculatorStandard;
     src: url("./../resources/fonts/digital-7.ttf");
 }
-
 @keyframes blinker {
     50% { opacity: 0; }
 }
 
-@keyframes example1 {
+@keyframes led-effect {
     0%   {
         -moz-transform: translateX(100%); /* Firefox bug fix */
         -webkit-transform: translateX(100%); /* Firefox bug fix */
@@ -21,9 +20,9 @@
 }
 
 .vending-machine {
-    padding: 20px;
-    padding-left: 150px;
-    padding-right: 150px;
+    width: 900px;
+    margin-top:20px;
+    margin-left:20px;
 }
 
 .vm-top {
@@ -37,7 +36,6 @@
 .vm-body {
     background: url("./../resources/imgs/metal.jpg") ;
     height: 850px;
-
 }
 
 .vm-window {
@@ -50,7 +48,6 @@
     box-shadow: inset 1px 0 170px -65px rgba(0,0,0,0.8), inset 2px 0 38px 3px rgba(0,0,0,0.4);
     position: relative;
 }
-
 
 .shelf-components {
     position: relative;
@@ -199,7 +196,7 @@
     height: 100%;
     margin: 0;
     text-align: center;
-    animation: example1 5s linear infinite;
+    animation: led-effect 5s linear infinite;
 }
 
 .pad {
@@ -363,4 +360,10 @@
 }
 
 
+.product-image {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 65px 85px;
+}
 
