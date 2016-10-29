@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Vending Machine</title>
 <!--        <script src="//rawgit.com/gilbox/angular-simflux-experiment/master/Flux.js"></script>
         <script src="js/customFlux.js"></script>-->
         <script src="dist/bundle.js"></script>
@@ -10,53 +10,60 @@
         <link rel="stylesheet" href="style/style.css">
     </head>
     <body ng-app="vmApp" ng-controller="vmCtrl">
-
-        <div class="vending-machine">
-            <div class="vm-top"></div>
-            <div class="vm-body">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="vm-window">
-                            <div class="empty-shelfs">
-                                <div class="shelf-components" ng-repeat="i in [1,2,3,4,5]">
-                                    <div class="shelft"></div>
-                                    <div class="row code-track text-center" style="z-index:0;"></div>
-                                </div>
-                            </div>
-                            <div class="shelfs-with-products">
-                                <div class="row single-shelf">
-                                    <div class="col-lg-2" ng-repeat="(key, product) in state.products">
-                                        <product-image src="product.imgSrc" quantity="product.quantity"></product-image>
-                                        <div class="text-center product-code">{{key}}</div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="vending-machine">
+                    <div class="vm-top"></div>
+                    <div class="vm-body">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="vm-window">
+                                    <div class="empty-shelfs">
+                                        <div class="shelf-components" ng-repeat="i in [1,2,3,4,5]">
+                                            <div class="shelft"></div>
+                                            <div class="row code-track text-center" style="z-index:0;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shelfs-with-products">
+                                        <div class="row single-shelf">
+                                            <div class="col-lg-2" ng-repeat="(key, product) in state.products">
+                                                <product-image src="product.imgSrc" quantity="product.quantity"></product-image>
+                                                <div class="text-center product-code">{{key}}</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 vm-control">
-                        <div class="control-content">
-                            <img src="resources/imgs/logo.png" class="logo">
+                            <div class="col-lg-4 vm-control">
+                                <div class="control-content">
+                                    <img src="resources/imgs/logo.png" class="logo">
 
-                            <div class="last-purchase">
-                                <span>{{state.ledMessage}}</span>
-                            </div>
+                                    <div class="last-purchase">
+                                        <span>{{state.ledMessage}}</span>
+                                    </div>
 
-                            <action-pad code="state.code"></action-pad>
+                                    <action-pad code="state.code"></action-pad>
 
-                            <div class="attention-poster pull-right">
-                                <img src="./resources/imgs/vending-machine-warning.jpg" height="150" width="130">
+                                    <div class="attention-poster pull-right">
+                                        <img src="./resources/imgs/vending-machine-warning.jpg" height="150" width="130">
+                                    </div>
+                                    <div class="product-exit">
+                                        <span>product exit</span>
+                                    </div>
+                                </div>
+                                <div class="buttons">
+                                    <div class="green-light"></div>
+                                    <div class="red-light"></div>
+                                </div>
                             </div>
-                            <div class="product-exit">
-                                <span>product exit</span>
-                            </div>
-                        </div>
-                        <div class="buttons">
-                            <div class="green-light"></div>
-                            <div class="red-light"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4">
+            </div>
         </div>
+
+
     </body>
 </html>
