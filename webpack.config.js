@@ -1,5 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var a  = new ExtractTextPlugin('dist/aa.css');
 
 module.exports = {
     entry: {
@@ -8,9 +11,11 @@ module.exports = {
             './js/action/VendingMachineAction.js',
             './js/store/ScreenStore.js',
             './js/directives/controlPadComponent.js',
-            './js/directives/productImageDirective.js'
+            './js/directives/productImageDirective.js',
+            './js/flowLogger.js'
         ]
     },
+    devtool: "source-map",
     output: {
         path: path.join(__dirname, "dist"),
         filename: "./bundle.js"
@@ -26,7 +31,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.less$/,
-                loader: "style!css!less"
+                loader: a.extract(['css','less'])
             },
             {
                 test: /\.js$/,

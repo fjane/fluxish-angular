@@ -1,6 +1,7 @@
 import Immutable from "immutable";
-export default (dispatcher, VendingMachineProducts) =>
+export default (dispatcher, VendingMachineProducts, flowLogger) =>
     dispatcher.registerStore({
+        storeName: 'screenStore',
         
         state: {
             products: {},
@@ -9,10 +10,12 @@ export default (dispatcher, VendingMachineProducts) =>
         },
 
         'action:init': function() {
+            flowLogger.storeLog('screenStore.action:init');
             this.state.products = VendingMachineProducts;
         },
 
         'action:purchase': function(payload) {
+            flowLogger.storeLog('screenStore.action:purchase');
             const product = this.state.products[payload.code];
 
             if(!product) {
@@ -31,6 +34,7 @@ export default (dispatcher, VendingMachineProducts) =>
         },
 
         'action:enterCode': function(payload) {
+            flowLogger.storeLog('screenStore.action:enterCode');
             const code = this.state.code;
             this.state.code = (code === "__") ?
                 "_" + payload.character :
@@ -38,6 +42,7 @@ export default (dispatcher, VendingMachineProducts) =>
         },
 
         'action.resetCode': function() {
+            flowLogger.storeLog('screenStore.action.resetCode');
             this.state.code =  "__";
         }
     });
