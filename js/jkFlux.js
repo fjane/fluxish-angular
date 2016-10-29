@@ -2,7 +2,7 @@ import Flux from 'flux';
 import flowLogger from './flowLogger';
 
 
-let ourFlux = {
+let jkFlux = {
     Dispatcher: OurDispatcher
 };
 
@@ -41,4 +41,4 @@ OurDispatcher.prototype.registerAction = function(ac) {
     return ac;
 }
 
-module.exports = ourFlux;
+module.exports = jkFlux;

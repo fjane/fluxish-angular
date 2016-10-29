@@ -1,5 +1,5 @@
 import Immutable from "immutable";
-export default (dispatcher, VendingMachineProducts, flowLogger) =>
+export default (dispatcher, dbProductStorage, flowLogger) =>
     dispatcher.registerStore({
         storeName: 'screenStore',
         
@@ -11,7 +11,7 @@ export default (dispatcher, VendingMachineProducts, flowLogger) =>
 
         'action:init': function() {
             flowLogger.storeLog('screenStore.action:init');
-            this.state.products = VendingMachineProducts;
+            this.state.products = dbProductStorage.getProducts();
         },
 
         'action:purchase': function(payload) {

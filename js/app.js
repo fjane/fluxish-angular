@@ -10,22 +10,24 @@ import productImageDirective from "./directives/productImageDirective";
 
 import ProductsData from "./data";
 
-import F from "./ourFlux";
+import jkFlux from "./jkFlux";
 
-/*console.log(new F.Dispatcher());*/
-
+import dbProductStorage from './dbProductStorage';
 
 angular.module('vmApp', [])
-    .constant('dispatcher', new  F.Dispatcher())
+    .constant('dispatcher', new  jkFlux.Dispatcher())
     .factory('VendingMachineAction', ['dispatcher', 'flowLogger', VendingMachineAction])
-    .factory('ScreenStore', ['dispatcher', 'VendingMachineProducts', 'flowLogger', ScreenStore])
+    .factory('ScreenStore', ['dispatcher', 'dbProductStorage', 'flowLogger', ScreenStore])
     .factory('flowLogger', flowLogger)
+    .factory('dbProductStorage', ['VendingMachineProducts', dbProductStorage])
+    
     .controller('vmCtrl', ['$scope', 'ScreenStore', MainController])
     .directive('actionPad', ['VendingMachineAction', 'flowLogger', controlPadComponent])
     .directive('productImage', ['$compile', productImageDirective])
     .value('VendingMachineProducts', ProductsData)
-    .run(function (ScreenStore, VendingMachineAction, flowLogger) {
+    .run(function (ScreenStore, VendingMachineAction, flowLogger, dbProductStorage) {
         flowLogger.actionEvent("application initialization");
+        dbProductStorage.setProducts();
         VendingMachineAction.init();
     });
 
