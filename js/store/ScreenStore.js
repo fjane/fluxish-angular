@@ -1,4 +1,3 @@
-import Immutable from "immutable";
 export default (dispatcher, dbProductStorage, flowLogger) =>
     dispatcher.registerStore({
         storeName: 'screenStore',
