@@ -37,7 +37,7 @@ angular.module('vmApp', [])
     // DB services
     .factory('dbProductStorage', ['VendingMachineProducts', dbProductStorage])
 
-    .controller('vmCtrl', ['$scope', 'ScreenStore', MainController])
+    .controller('vmCtrl', ['$scope', 'ScreenStore', 'VendorStore', MainController])
 
     // directives
     .directive('actionPad', ['VendingMachineAction', 'flowLogger', controlPadComponent])

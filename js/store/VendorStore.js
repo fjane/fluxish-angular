@@ -8,6 +8,10 @@ export default (dispatcher, dbProductStorage) =>
             orderTruckShow: false,
         },
 
+        'action:init': function() {
+            this.state.missingProducts = dbProductStorage.getMissingProducts();
+        },
+
         'action:refillProducts': function () {
             this.state.missingProducts.forEach(function(product){
                 product.quantity = Math.floor(Math.random() * 6) + 2;
