@@ -13,9 +13,9 @@ export default (dispatcher, dbProductStorage) =>
         },
 
         'action:refillProducts': function () {
-            this.state.missingProducts.forEach(function(product){
+            for(let product in this.state.missingProducts){
                 product.quantity = Math.floor(Math.random() * 6) + 2;
-            });
+            }
             dbProductStorage.updateMissingProducts(this.state.missingProducts);
         },
         

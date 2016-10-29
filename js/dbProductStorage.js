@@ -16,7 +16,7 @@ export default (ProductsData) => {
         },
         getMissingProducts: function () {
             let products = this.getProducts();
-            let missingProducts = [];
+            let missingProducts = {};
             for (let product in products) {
                 if (products[product].quantity === 0) {
                     missingProducts[product] = products[product];
