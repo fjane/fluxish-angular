@@ -16,7 +16,7 @@ export default (dispatcher, dbProductStorage, flowLogger) =>
 
         'action:purchase': function(payload) {
             flowLogger.storeLog('screenStore.action:purchase');
-            const product = this.state.products[payload.code];
+            const product =  dbProductStorage.getProductByKey(payload.code);
 
             if(!product) {
                 this.state.ledMessage = "Invalid purchase code!";
@@ -26,7 +26,8 @@ export default (dispatcher, dbProductStorage, flowLogger) =>
                     this.state.ledMessage = `No products! Try something else.`;
                 }
                 else {
-                    --this.state.products[payload.code].quantity;
+                    dbProductStorage.decreaseProduct(payload.code);
+                    this.state.products = dbProductStorage.getProducts();
                     this.state.ledMessage = `You just bought: ${product.name}.`;
                 }
             }

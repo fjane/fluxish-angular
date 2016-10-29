@@ -15,16 +15,30 @@ import jkFlux from "./jkFlux";
 import dbProductStorage from './dbProductStorage';
 
 angular.module('vmApp', [])
+    // Dispatcher instance
     .constant('dispatcher', new  jkFlux.Dispatcher())
+
+    // Initial products
+    .value('VendingMachineProducts', ProductsData)
+
+    // action services
     .factory('VendingMachineAction', ['dispatcher', 'flowLogger', VendingMachineAction])
+
+    // storage service
     .factory('ScreenStore', ['dispatcher', 'dbProductStorage', 'flowLogger', ScreenStore])
+
+    // logger
     .factory('flowLogger', flowLogger)
+
+    // DB services
     .factory('dbProductStorage', ['VendingMachineProducts', dbProductStorage])
     
     .controller('vmCtrl', ['$scope', 'ScreenStore', MainController])
+
+    // directives
     .directive('actionPad', ['VendingMachineAction', 'flowLogger', controlPadComponent])
     .directive('productImage', ['$compile', productImageDirective])
-    .value('VendingMachineProducts', ProductsData)
+
     .run(function (ScreenStore, VendingMachineAction, flowLogger, dbProductStorage) {
         flowLogger.actionEvent("application initialization");
         dbProductStorage.setProducts();
