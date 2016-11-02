@@ -17,7 +17,7 @@ import dbProductStorage from './dbProductStorage';
 
 angular.module('vmApp', [])
     // Dispatcher instance
-    .constant('dispatcher', new  jkFlux.Dispatcher())
+    .constant('dispatcher', new jkFlux.Dispatcher())
 
     // Initial products
     .value('VendingMachineProducts', ProductsData)
@@ -29,7 +29,7 @@ angular.module('vmApp', [])
     .factory('ScreenStore', ['dispatcher', 'dbProductStorage', 'flowLogger', ScreenStore])
 
     // storage service
-    .factory('VendorStore', ['dispatcher', 'dbProductStorage', VendorStore])
+    .factory('VendorStore', ['dispatcher', 'dbProductStorage', 'flowLogger' , 'ScreenStore', VendorStore])
 
 	// logger
     .factory('flowLogger', flowLogger)

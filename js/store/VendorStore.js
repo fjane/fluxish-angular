@@ -1,4 +1,4 @@
-export default (dispatcher, dbProductStorage) =>
+export default (dispatcher, dbProductStorage, flowLogger, ScreenStore) =>
     dispatcher.registerStore({
         storeName: 'vendorStore',
 
@@ -9,6 +9,8 @@ export default (dispatcher, dbProductStorage) =>
         },
 
         'action:init': function() {
+            dispatcher.waitForStores([ScreenStore]);
+            flowLogger.storeLog('vendorStore.action:init');
             this.state.missingProducts = dbProductStorage.getMissingProducts();
         },
 

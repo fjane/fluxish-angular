@@ -6,13 +6,7 @@ var a  = new ExtractTextPlugin('dist/aa.css');
 
 module.exports = {
     entry: {
-        app: ['./js/app.js',
-            './js/controller.js',
-            './js/action/VendingMachineAction.js',
-            './js/store/ScreenStore.js',
-            './js/directives/controlPadComponent.js',
-            './js/directives/productImageDirective.js',
-            './js/flowLogger.js'
+        app: ['./js/app.js'
         ]
     },
     devtool: "source-map",
