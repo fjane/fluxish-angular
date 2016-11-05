@@ -4,7 +4,7 @@ export default (VendingMachineAction, flowLogger) => {
         scope: {
             code: '='
         },
-        templateUrl: './template/pad.html',
+        templateUrl: './src/template/pad.html',
         link: function(scope) {
 
             scope.enterCode = (character) => {

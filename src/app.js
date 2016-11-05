@@ -6,14 +6,14 @@ import VendingMachineAction from "./action/VendingMachineAction";
 import ScreenStore from "./store/ScreenStore";
 import VendorStore from "./store/VendorStore";
 import MainController from "./controller";
-import controlPadComponent from "./directives/controlPadComponent";
-import productImageDirective from "./directives/productImageDirective";
+import controlPadComponent from "./directives/padDirective";
+import productImageDirective from "./directives/productDirective";
 
-import ProductsData from "./data";
+import ProductsData from "./storage/data";
 
-import jkFlux from "./jkFlux";
+import jkFlux from "./dispatcher/jkFlux";
 
-import dbProductStorage from './dbProductStorage';
+import dbProductStorage from './storage/dbProductStorage';
 
 angular.module('vmApp', [])
     // Dispatcher instance

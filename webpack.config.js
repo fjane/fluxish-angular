@@ -1,12 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-var a  = new ExtractTextPlugin('dist/aa.css');
 
 module.exports = {
     entry: {
-        app: ['./js/app.js'
+        app: ['./src/app.js'
         ]
     },
     devtool: "source-map",
@@ -23,10 +20,6 @@ module.exports = {
             },
         ],
         loaders: [
-            {
-                test: /\.less$/,
-                loader: a.extract(['css','less'])
-            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,

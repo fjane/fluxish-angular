@@ -1,5 +1,5 @@
 import Flux from 'flux';
-import flowLogger from './flowLogger';
+import flowLogger from '../flowLogger';
 
 class JKDispatcher {
     constructor() {
