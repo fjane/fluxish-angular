@@ -1,25 +1,32 @@
-export default (ProductsData) => ({
-    setProducts: function (products) {
+export default class DBProductStorage {
+    constructor(ProductsData) {
+        this.productsData = ProductsData;
+    }
+
+    setProducts (products) {
         if(products) {
             window.localStorage.setItem('products', JSON.stringify(products));
         }
         else {
-            window.localStorage.setItem('products', JSON.stringify(ProductsData));
+            window.localStorage.setItem('products', JSON.stringify(this.productsData));
         }
+    }
 
-    },
-    getProducts: function () {
+    getProducts () {
         return JSON.parse(window.localStorage.getItem('products'));
-    },
-    getProductByKey: function (code) {
+    }
+
+    getProductByKey (code) {
         return this.getProducts()[code];
-    },
-    decreaseProduct: function (code) {
+    }
+
+    decreaseProduct (code) {
         let products = this.getProducts();
         --products[code].quantity;
         window.localStorage.setItem('products', JSON.stringify(products));
-    },
-    getMissingProducts: function () {
+    }
+
+    getMissingProducts () {
         let products = this.getProducts();
         let missingProducts = {};
         for (let product in products) {
@@ -28,18 +35,17 @@ export default (ProductsData) => ({
             }
         }
         return missingProducts;
-    },
-    updateMissingProducts: function (missingProducts) {
-        console.log(missingProducts);
+    }
+
+    updateMissingProducts (missingProducts) {
         let products = this.getProducts();
         for(let code in products) {
             for(let codeMissing in missingProducts) {
-                console.log(missingProducts[codeMissing]);
                 if(code === codeMissing) {
                     products[code].quantity = missingProducts[codeMissing].quantity
                 }
             }
         }
         this.setProducts(products);
-    },
-})
+    }
+}

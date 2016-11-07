@@ -16,10 +16,8 @@ export default (dispatcher, dbProductStorage, flowLogger, ScreenStore) =>
 
         'action:purchase': function(){
             let missingProducts = dbProductStorage.getMissingProducts();
-            if(Object.keys(missingProducts).length >= 2){
-                this.state.orderTruckShow = true;
-                this.state.missingProducts = missingProducts;
-            }
+            this.state.orderTruckShow = true;
+            this.state.missingProducts = missingProducts; 
         },
 
         'action:refillProducts': function () {

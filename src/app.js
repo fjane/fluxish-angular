@@ -37,7 +37,7 @@ angular.module('vmApp', [])
     .factory('flowLogger', flowLogger)
 
     // DB services
-    .factory('dbProductStorage', ['VendingMachineProducts', dbProductStorage])
+    .service('dbProductStorage', ['VendingMachineProducts', dbProductStorage])
 
     .controller('vmCtrl', ['$scope', 'ScreenStore', 'VendorStore', MainController])
 
