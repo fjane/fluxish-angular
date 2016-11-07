@@ -1,6 +1,12 @@
 export default (ProductsData) => ({
-    setProducts: function () {
-        window.localStorage.setItem('products', JSON.stringify(ProductsData));
+    setProducts: function (products) {
+        if(products) {
+            window.localStorage.setItem('products', JSON.stringify(products));
+        }
+        else {
+            window.localStorage.setItem('products', JSON.stringify(ProductsData));
+        }
+
     },
     getProducts: function () {
         return JSON.parse(window.localStorage.getItem('products'));
@@ -22,12 +28,17 @@ export default (ProductsData) => ({
             }
         }
         return missingProducts;
-
     },
     updateMissingProducts: function (missingProducts) {
+        console.log(missingProducts);
         let products = this.getProducts();
-        for (let product in missingProducts) {
-            products[product].quantity = missingProducts[product].quantity;
+        for(let code in products) {
+            for(let codeMissing in missingProducts) {
+                console.log(missingProducts[codeMissing]);
+                if(code === codeMissing) {
+                    products[code].quantity = missingProducts[codeMissing].quantity
+                }
+            }
         }
         this.setProducts(products);
     },

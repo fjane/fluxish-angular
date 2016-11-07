@@ -59,9 +59,12 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div ng-repeat="(key, product) in vendor.state.missingProducts">
+                <!--<div ng-repeat="(key, product) in vendor.state.missingProducts">
                     <b>{{key}}: </b>{{product.name}}
-                </div>
+                </div>-->
+
+
+                <vendor-panel missing-products="vendor.missingProducts"></vendor-panel>
             </div>
         </div>
 

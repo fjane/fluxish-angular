@@ -1,4 +1,4 @@
-export default (dispatcher, dbProductStorage, flowLogger) =>
+export default (dispatcher, dbProductStorage, $injector, flowLogger) =>
     dispatcher.registerStore({
         storeName: 'screenStore',
         
@@ -44,5 +44,9 @@ export default (dispatcher, dbProductStorage, flowLogger) =>
         'action.resetCode': function() {
             flowLogger.storeLog('screenStore.action.resetCode');
             this.state.code =  "__";
+        },
+        'action:refillProducts': function() {
+            dispatcher.waitForStores([$injector.get('VendorStore')]);
+            this.state.products = dbProductStorage.getProducts();
         }
     });

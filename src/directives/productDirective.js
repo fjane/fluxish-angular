@@ -9,6 +9,7 @@ export default ($compile) => ({
         imageElement.addClass('product-image');
 
         scope.$watch('quantity', () => {
+            //console.log("quantity: ",scope.quantity);
             switch (scope.quantity) {
                 case 3:
                     imageElement.css('background-image', `url("./resources/imgs/${scope.src}"), url("./resources/imgs/${scope.src}"), url("./resources/imgs/${scope.src}")`);

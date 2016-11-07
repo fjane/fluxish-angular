@@ -6,8 +6,10 @@ import VendingMachineAction from "./action/VendingMachineAction";
 import ScreenStore from "./store/ScreenStore";
 import VendorStore from "./store/VendorStore";
 import MainController from "./controller";
-import controlPadComponent from "./directives/padDirective";
+
+import controlPadDirective from "./directives/padDirective";
 import productImageDirective from "./directives/productDirective";
+import vendorPanelDirective from "./directives/vendorDirective";
 
 import ProductsData from "./storage/data";
 
@@ -26,7 +28,7 @@ angular.module('vmApp', [])
     .factory('VendingMachineAction', ['dispatcher', 'flowLogger', VendingMachineAction])
 
     // storage service
-    .factory('ScreenStore', ['dispatcher', 'dbProductStorage', 'flowLogger', ScreenStore])
+    .factory('ScreenStore', ['dispatcher', 'dbProductStorage', '$injector', 'flowLogger', ScreenStore])
 
     // storage service
     .factory('VendorStore', ['dispatcher', 'dbProductStorage', 'flowLogger' , 'ScreenStore', VendorStore])
@@ -40,8 +42,10 @@ angular.module('vmApp', [])
     .controller('vmCtrl', ['$scope', 'ScreenStore', 'VendorStore', MainController])
 
     // directives
-    .directive('actionPad', ['VendingMachineAction', 'flowLogger', controlPadComponent])
+    .directive('actionPad', ['VendingMachineAction', 'flowLogger', controlPadDirective])
     .directive('productImage', ['$compile', productImageDirective])
+    .directive('vendorPanel', ['VendingMachineAction', 'flowLogger', vendorPanelDirective])
+
     .value('VendingMachineProducts', ProductsData)
     .run(function (ScreenStore, VendorStore, VendingMachineAction, flowLogger, dbProductStorage) {
         flowLogger.actionEvent("application initialization");

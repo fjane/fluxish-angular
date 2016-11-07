@@ -8,6 +8,7 @@ module.exports = (dispatcher, flowLogger) =>
         purchase: (code) => {
             flowLogger.actionLog('vendingMachineAction.purchase()', `product code: ${code}`);
             dispatcher.dispatch('action:purchase', {code});
+           // dispatcher.dispatch('action:init');
         },
 
         enterCode: (character) => {
@@ -18,5 +19,11 @@ module.exports = (dispatcher, flowLogger) =>
         resetCode: () => {
             flowLogger.actionLog('vendingMachineAction.resetCode()');
             dispatcher.dispatch('action.resetCode');
-        }
+        },
+
+        refill: () => {
+            flowLogger.actionLog('vendingMachineAction.refill()');
+            dispatcher.dispatch('action:refillProducts');
+            //dispatcher.dispatch('action:init');
+        },
     });
