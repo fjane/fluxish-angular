@@ -1,7 +1,5 @@
 export default (dispatcher, dbProductStorage, flowLogger, ScreenStore) =>
     dispatcher.registerStore({
-        storeName: 'vendorStore',
-
         state: {
             missingProducts: [],
             threshold: 2,

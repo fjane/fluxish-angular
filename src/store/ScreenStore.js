@@ -1,7 +1,5 @@
 export default (dispatcher, dbProductStorage, $injector, flowLogger) =>
     dispatcher.registerStore({
-        storeName: 'screenStore',
-        
         state: {
             products: {},
             ledMessage: "You haven't purchased anything!",
