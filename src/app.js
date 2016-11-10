@@ -31,7 +31,7 @@ angular.module('vmApp', [])
     .factory('ScreenStore', ['dispatcher', 'dbProductStorage', '$injector', 'flowLogger', ScreenStore])
 
     // storage service
-    .factory('VendorStore', ['dispatcher', 'dbProductStorage', 'flowLogger' , 'ScreenStore', VendorStore])
+    .factory('VendorStore', ['dispatcher', 'dbProductStorage', 'flowLogger' , 'ScreenStore', '$timeout', VendorStore])
 
 	// logger
     .factory('flowLogger', flowLogger)

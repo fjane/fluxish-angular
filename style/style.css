@@ -2,12 +2,15 @@
     font-family: CalculatorStandard;
     src: url("./../resources/fonts/digital-7.ttf");
 }
+
 @keyframes blinker {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes led-effect {
-    0%   {
+    0% {
         -moz-transform: translateX(100%); /* Firefox bug fix */
         -webkit-transform: translateX(100%); /* Firefox bug fix */
         transform: translateX(100%);
@@ -21,31 +24,31 @@
 
 .vending-machine {
     width: 900px;
-    margin-top:20px;
-    margin-left:20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .vm-top {
-    background:url("./../resources/imgs/metal-top.jpg");
-    border-left: 150px  solid white;
+    background: url("./../resources/imgs/metal-top.jpg");
+    border-left: 150px solid white;
     border-right: 150px solid white;
     border-bottom: 50px solid transparent;
     opacity: .82
 }
 
 .vm-body {
-    background: url("./../resources/imgs/metal.jpg") ;
+    background: url("./../resources/imgs/metal.jpg");
     height: 850px;
 }
 
 .vm-window {
     margin: 40px;
     margin-right: 0px;
-    border:1px solid black;
+    border: 1px solid black;
     height: 770px;
     border-radius: 10px;
     background-color: #f0f0f0;
-    box-shadow: inset 1px 0 170px -65px rgba(0,0,0,0.8), inset 2px 0 38px 3px rgba(0,0,0,0.4);
+    box-shadow: inset 1px 0 170px -65px rgba(0, 0, 0, 0.8), inset 2px 0 38px 3px rgba(0, 0, 0, 0.4);
     position: relative;
 }
 
@@ -73,7 +76,7 @@
 
 .empty-shelfs {
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
     z-index: 1;
 }
@@ -81,19 +84,19 @@
 .shelfs-with-products {
     width: 100%;
     position: absolute;
-    top:20px;
+    top: 20px;
     z-index: 2;
-    padding-left:10px;
-    padding-right:10px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 40px;
 }
 
 .code-track {
     background: url("./../resources/imgs/track.jpg");
-    border:1px solid black;
+    border: 1px solid black;
     height: 30px;
     padding-left: 10px;
-    margin-left:0px;
+    margin-left: 0px;
     margin-right: 0px;
     position: absolute;
     bottom: 0;
@@ -104,7 +107,7 @@
 .product-code {
     font-family: CalculatorStandard;
     font-size: 22px;
-    color:white;
+    color: white;
     margin-bottom: 19px;
 }
 
@@ -117,15 +120,15 @@
 
 .control-content {
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
 }
 
 .buttons {
     position: absolute;
     bottom: 0;
-    width:100%;
-    padding-left:220px;
+    width: 100%;
+    padding-left: 220px;
 }
 
 .logo {
@@ -153,30 +156,30 @@
 
 .product-line {
     position: absolute;
-    bottom:18px;
+    bottom: 18px;
     z-index: 1;
     padding-left: 0px;
-    margin-left:0px;
+    margin-left: 0px;
     margin-right: 0px;
 }
 
 .controls {
     border: 1px solid #191919;
-    margin-top:30px;
+    margin-top: 30px;
     border-radius: 15px;
     height: 310px;
-    margin-right:60px;
+    margin-right: 60px;
     padding: 15px;
 
-    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
-    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
-    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+    -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112, 112, 112, 0.4);
+    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112, 112, 112, 0.4);
+    box-shadow: inset 35px -38px 32px -34px rgba(112, 112, 112, 0.4);
 }
 
 .last-purchase {
     font-family: CalculatorStandard;
     font-size: 30px;
-    color:green;
+    color: green;
     font-weight: bold;
 
     border: 1px solid black;
@@ -184,9 +187,9 @@
 
     overflow: hidden;
     position: relative;
-    height:40px;
+    height: 40px;
     width: 80%;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .last-purchase span {
@@ -206,39 +209,36 @@
 }
 
 .pad-key {
-    color:white;
+    color: white;
     border: 1px solid #191919;
     border-radius: 10px;
     height: 50px;
     font-size: 25px;
-    font-family:CalculatorStandard;
-    padding-top:8px;
+    font-family: CalculatorStandard;
+    padding-top: 8px;
     margin-bottom: 5px;
 
- /*   -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
-    -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
-    box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);*/
+    /*   -webkit-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+       -moz-box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);
+       box-shadow: inset 35px -38px 32px -34px rgba(112,112,112,0.4);*/
 
-
-    background-image:-webkit-linear-gradient(top, #303d40, #242e30);
-    background-image:-moz-linear-gradient(top, #303d40, #242e30);
-    background-image:-ms-linear-gradient(top, #303d40, #242e30);
-    background-image:-o-linear-gradient(top, #303d40, #242e30);
-    background-image:linear-gradient(to bottom, #303d40, #242e30);
-    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    box-shadow:0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-
-
+    background-image: -webkit-linear-gradient(top, #303d40, #242e30);
+    background-image: -moz-linear-gradient(top, #303d40, #242e30);
+    background-image: -ms-linear-gradient(top, #303d40, #242e30);
+    background-image: -o-linear-gradient(top, #303d40, #242e30);
+    background-image: linear-gradient(to bottom, #303d40, #242e30);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
 
 }
 
 .pad-key:hover {
-    background-image:-webkit-linear-gradient(top, #242e30, #303d40);
-    background-image:-moz-linear-gradient(top, #242e30, #303d40);
-    background-image:-ms-linear-gradient(top, #242e30, #303d40);
-    background-image:-o-linear-gradient(top, #242e30, #303d40);
-    background-image:linear-gradient(top, #242e30, #303d40);
+    background-image: -webkit-linear-gradient(top, #242e30, #303d40);
+    background-image: -moz-linear-gradient(top, #242e30, #303d40);
+    background-image: -ms-linear-gradient(top, #242e30, #303d40);
+    background-image: -o-linear-gradient(top, #242e30, #303d40);
+    background-image: linear-gradient(top, #242e30, #303d40);
 }
 
 .pad-key-disabled {
@@ -256,46 +256,46 @@
     width: 100%;
     border-radius: 10px;
 
-    background-image:-webkit-linear-gradient(top, #006600, #004c00);
-    background-image:-moz-linear-gradient(top, #006600, #004c00);
-    background-image:-ms-linear-gradient(top, #006600, #004c00);
-    background-image:-o-linear-gradient(top, #006600, #004c00);
-    background-image:linear-gradient(to bottom, #006600, #004c00);
-    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    background-image: -webkit-linear-gradient(top, #006600, #004c00);
+    background-image: -moz-linear-gradient(top, #006600, #004c00);
+    background-image: -ms-linear-gradient(top, #006600, #004c00);
+    background-image: -o-linear-gradient(top, #006600, #004c00);
+    background-image: linear-gradient(to bottom, #006600, #004c00);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
 .ok-button:hover {
-    background-image:-webkit-linear-gradient(top, #004c00, #006600);
-    background-image:-moz-linear-gradient(top, #004c00, #006600);
-    background-image:-ms-linear-gradient(top, #004c00, #006600);
-    background-image:-o-linear-gradient(top, #004c00, #006600);
-    background-image:linear-gradient(to bottom, #004c00, #006600);
+    background-image: -webkit-linear-gradient(top, #004c00, #006600);
+    background-image: -moz-linear-gradient(top, #004c00, #006600);
+    background-image: -ms-linear-gradient(top, #004c00, #006600);
+    background-image: -o-linear-gradient(top, #004c00, #006600);
+    background-image: linear-gradient(to bottom, #004c00, #006600);
 }
 
 .cancel-button {
     height: 105px;
-    margin-top:5px;
+    margin-top: 5px;
     width: 100%;
     border-radius: 10px;
-    background-image:-webkit-linear-gradient(top, #7f0000, #660000);
-    background-image:-moz-linear-gradient(top, #7f0000, #660000);
-    background-image:-ms-linear-gradient(top, #7f0000, #660000);
-    background-image:-o-linear-gradient(top, #7f0000, #660000);
-    background-image:linear-gradient(to bottom, #7f0000, #660000);
-    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    background-image: -webkit-linear-gradient(top, #7f0000, #660000);
+    background-image: -moz-linear-gradient(top, #7f0000, #660000);
+    background-image: -ms-linear-gradient(top, #7f0000, #660000);
+    background-image: -o-linear-gradient(top, #7f0000, #660000);
+    background-image: linear-gradient(to bottom, #7f0000, #660000);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
 .cancel-button:hover {
     background: #7f0000;
-    background-image:-webkit-linear-gradient(top, #660000, #7f0000);
-    background-image:-moz-linear-gradient(top, #660000, #7f0000);
-    background-image:-ms-linear-gradient(top, #660000, #7f0000);
-    background-image:-o-linear-gradient(top, #660000, #7f0000);
-    background-image:linear-gradient(top, #660000, #7f0000);
+    background-image: -webkit-linear-gradient(top, #660000, #7f0000);
+    background-image: -moz-linear-gradient(top, #660000, #7f0000);
+    background-image: -ms-linear-gradient(top, #660000, #7f0000);
+    background-image: -o-linear-gradient(top, #660000, #7f0000);
+    background-image: linear-gradient(top, #660000, #7f0000);
 }
 
 .push_button {
@@ -304,61 +304,60 @@
 
 .push_button {
     position: relative;
-    text-align:center;
-    color:#FFF;
-    text-decoration:none;
-    font-family:CalculatorStandard;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    font-family: CalculatorStandard;
     display: block;
 }
 
 .push_button:active {
-    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
-    top:2px;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+    top: 2px;
 }
-.push_button:active:before{
+
+.push_button:active:before {
     top: -11px;
     bottom: -5px;
     content: "";
 }
-
 
 .entered-code-field {
     border: 1px solid black;
     background-color: #003300;
     font-family: CalculatorStandard;
     font-size: 30px;
-    color:green;
+    color: green;
     font-weight: bold;
     height: 40px;
 }
 
 .attention-poster {
-    margin-top:10px;
-    margin-right:60px;
+    margin-top: 10px;
+    margin-right: 60px;
 }
 
 .product-exit {
     position: relative;
     border: 1px solid #191919;
     /*border-bottom-width: 20px;*/
-    margin-top:170px;
+    margin-top: 170px;
     border-radius: 15px;
     height: 60px;
-    margin-right:60px;
+    margin-right: 60px;
 
-    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
-    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #1b1919, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
 .product-exit span {
-    color:grey;
+    color: grey;
     font-size: 12px;
     position: absolute;
     bottom: 5px;
     right: 15px;
 }
-
 
 .product-image {
     height: 100px;
@@ -367,3 +366,42 @@
     background-size: 65px 85px;
 }
 
+img.truck-image {
+    width: 150px;
+    height: auto;
+    transition: right 2s;
+    -webkit-transition: right 2s;
+    -moz-transition: right 2s;
+    position: absolute;
+    top: 140px;
+    right: calc(100% - 150px);
+}
+
+img.truck-image.to-warehouse {
+    right: 140px;
+}
+
+img.truck-image.to-vending-machine {
+    right: calc(100% - 150px);
+
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: "FlipH";
+    -ms-filter: "FlipH";
+}
+
+.btn-refill-products {
+    position: relative;
+    clear: both;
+    float: left;
+}
+
+img.warehouse {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+}

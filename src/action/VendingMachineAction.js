@@ -22,5 +22,6 @@ module.exports = (dispatcher, flowLogger) =>
         refill: () => {
             flowLogger.actionLog('vendingMachineAction.refill()');
             dispatcher.dispatch('action:refillProducts');
+            dispatcher.dispatch('action:goToWarehouse');
         },
     });
