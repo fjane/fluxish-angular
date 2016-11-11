@@ -4,7 +4,7 @@ export default (VendingMachineAction, flowLogger) => ({
         missingProducts: '=',
         truckClass: '='
     },
-    templateUrl: 'src/template/vendorPanel.html',
+    templateUrl: './src/directives/template/vendorPanel.html',
     link: function(scope) {
 
         scope.refillProducts = function(){
