@@ -373,7 +373,7 @@ img.truck-image {
     -webkit-transition: right 2s;
     -moz-transition: right 2s;
     position: absolute;
-    top: 140px;
+    top: 240px;
     right: calc(100% - 150px);
 }
 
@@ -402,6 +402,9 @@ img.warehouse {
     width: 130px;
     height: 130px;
     position: absolute;
-    top: 100px;
+    top: 200px;
     right: 10px;
+}
+.missing-products-list p {
+    font-size: 20px;
 }

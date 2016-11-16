@@ -1,9 +1,9 @@
 <div>
-    <div ng-repeat="product in missingProducts">
-        {{product.name}}
+    <div ng-repeat="product in missingProducts" class="missing-products-list">
+        <p>{{product.name}}</p>
     </div>
 
-    <button class="btn-refill-products" ng-click="refillProducts()">CLICK</button>
+    <button class="btn-refill-products btn btn-success btn-lg" ng-click="refillProducts()">R E F I L L</button>
 
     <img class="truck-image" ng-class="truckClass" src="resources/imgs/truck.png"/>
 
